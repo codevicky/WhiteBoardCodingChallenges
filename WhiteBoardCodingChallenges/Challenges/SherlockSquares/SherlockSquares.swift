@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/sherlock-and-squares
 class SherlockSquares: NSObject {
 
-    class func findCountOfSquaresBetweenARange(lowerBoundary: Int, upperBoundary: Int) -> Int {
+    class func findCountOfSquaresBetweenARange(_ lowerBoundary: Int, upperBoundary: Int) -> Int {
 //        
 //        var count = 0
 //        

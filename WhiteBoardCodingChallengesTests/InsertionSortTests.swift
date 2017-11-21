@@ -21,7 +21,7 @@ class InsertionSortTests: XCTestCase {
                              [2, 4, 4, 6, 8],
                              [2, 3, 4, 6, 8]]
         
-        XCTAssertEqual(expectedSteps, steps)
+        XCTAssertEqual(expectedSteps as NSArray, steps as NSArray)
     }
     
     // MARK: All
@@ -36,7 +36,7 @@ class InsertionSortTests: XCTestCase {
                              [1, 3, 4, 5, 6, 2],
                              [1, 2, 3, 4, 5, 6]]
         
-        XCTAssertEqual(expectedSteps, steps)
+        XCTAssertEqual(expectedSteps as NSArray, steps as NSArray)
     }
     
     func test_insertionSortAllB() {
@@ -52,7 +52,7 @@ class InsertionSortTests: XCTestCase {
                              [1, 3, 4, 5, 6, 7, 8, 9, 2],
                              [1, 2, 3, 4, 5, 6, 7, 8, 9]]
         
-        XCTAssertEqual(expectedSteps, steps)
+        XCTAssertEqual(expectedSteps as NSArray, steps as NSArray)
     }
     
     // MARK: NumberOfShifts

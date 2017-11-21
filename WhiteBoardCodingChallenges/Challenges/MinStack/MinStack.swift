@@ -20,7 +20,7 @@ class MinStack: NSObject {
     
     // MARK: Actions
     
-    func push(value: Int) {
+    func push(_ value: Int) {
         
         let node = MinStackNode.init(value: value)
         
@@ -41,7 +41,7 @@ class MinStack: NSObject {
             node.lowerNodeMinNode = node
         }
         
-        nodes.insert(node, atIndex: 0)
+        nodes.insert(node, at: 0)
     }
     
     func pop() -> MinStackNode? {

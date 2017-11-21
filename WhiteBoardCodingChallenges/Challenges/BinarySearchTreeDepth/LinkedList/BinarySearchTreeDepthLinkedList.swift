@@ -16,12 +16,12 @@ class BinarySearchTreeDepthLinkedList: NSObject {
     
     // MARK: Action
     
-    func addNode(binarySearchNode: BinarySearchTreeDepthNode) {
+    func addNode(_ binarySearchNode: BinarySearchTreeDepthNode) {
         
         addNode(binarySearchNode, linkedListNode: head)
     }
     
-    private func addNode(binarySearchNode: BinarySearchTreeDepthNode, linkedListNode: BinarySearchTreeDepthLinkedListNode?) {
+    fileprivate func addNode(_ binarySearchNode: BinarySearchTreeDepthNode, linkedListNode: BinarySearchTreeDepthLinkedListNode?) {
         
         if let linkedListNode = linkedListNode {
             

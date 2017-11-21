@@ -13,7 +13,7 @@ class PrimsMST: NSObject {
 
     // MARK: Distance
     
-    class func totalWeight(sourceIndex: Int, totalNodes: Int, edges: [[Int]]) -> Int {
+    class func totalWeight(_ sourceIndex: Int, totalNodes: Int, edges: [[Int]]) -> Int {
         
         let nodes = buildNodes(totalNodes)
         connectNodes(nodes, edges: edges)
@@ -41,7 +41,7 @@ class PrimsMST: NSObject {
                 totalWeight += minimumEdge.weight
                 
                 let destinationEdges = Array(minimumEdge.destination.edges.values)
-                edgeHeap.appendContentsOf(destinationEdges)
+                edgeHeap.append(contentsOf: destinationEdges)
                 
                 countOfEdgesAddedToTotal += 1
             }
@@ -54,7 +54,7 @@ class PrimsMST: NSObject {
     
     // MARK: Build
     
-    class func buildNodes(totalNodes: Int) -> [PrimsMSTNode] {
+    class func buildNodes(_ totalNodes: Int) -> [PrimsMSTNode] {
         
         var nodes = [PrimsMSTNode]()
         
@@ -69,7 +69,7 @@ class PrimsMST: NSObject {
     
     // MARK: Connect
     
-    class func connectNodes(nodes: [PrimsMSTNode], edges: [[Int]]) {
+    class func connectNodes(_ nodes: [PrimsMSTNode], edges: [[Int]]) {
     
         for edge in edges {
             

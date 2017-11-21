@@ -17,7 +17,7 @@ class BinarySearchTreeDepth: NSObject {
     
     // MARK: Add
     
-    func addValue(value: Int) {
+    func addValue(_ value: Int) {
         
         if root == nil {
             
@@ -29,7 +29,7 @@ class BinarySearchTreeDepth: NSObject {
         }
     }
     
-    private func addValue(value: Int, root: BinarySearchTreeDepthNode) {
+    fileprivate func addValue(_ value: Int, root: BinarySearchTreeDepthNode) {
         
         if value <= root.value {
             
@@ -57,7 +57,7 @@ class BinarySearchTreeDepth: NSObject {
     
     // MARK: Visit
     
-    private func visited(node: BinarySearchTreeDepthNode, inout nodesVisted: [BinarySearchTreeDepthLinkedList]) {
+    fileprivate func visited(_ node: BinarySearchTreeDepthNode, nodesVisted: inout [BinarySearchTreeDepthLinkedList]) {
         
         let depth = node.depth
         
@@ -87,7 +87,7 @@ class BinarySearchTreeDepth: NSObject {
         return nodesVisited
     }
     
-    private func nodesInDepth(root: BinarySearchTreeDepthNode?, inout nodesVisted: [BinarySearchTreeDepthLinkedList]) {
+    fileprivate func nodesInDepth(_ root: BinarySearchTreeDepthNode?, nodesVisted: inout [BinarySearchTreeDepthLinkedList]) {
         
         if let root = root {
             

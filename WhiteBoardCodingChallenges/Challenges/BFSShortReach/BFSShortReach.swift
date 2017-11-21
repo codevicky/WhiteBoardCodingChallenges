@@ -13,7 +13,7 @@ class BFSShortReach: NSObject {
     
     // MARK: Distance
     
-    class func distanceFromSourceToAllOtherNodes(sourceIndex: Int, totalNodes: Int, edges: [[Int]]) -> [BFSSearchReachNode] {
+    class func distanceFromSourceToAllOtherNodes(_ sourceIndex: Int, totalNodes: Int, edges: [[Int]]) -> [BFSSearchReachNode] {
         
         let nodes = buildNodes(totalNodes)
         connectNodes(nodes, edges: edges)
@@ -25,7 +25,7 @@ class BFSShortReach: NSObject {
         return nodes
     }
     
-    class func findDistanceFromSourceToAllOtherNodes(source: BFSSearchReachNode) {
+    class func findDistanceFromSourceToAllOtherNodes(_ source: BFSSearchReachNode) {
     
         source.visted = true
         source.distanceFromSource = 0
@@ -51,7 +51,7 @@ class BFSShortReach: NSObject {
     
     // MARK: Build
     
-    class func buildNodes(totalNodes: Int) -> [BFSSearchReachNode] {
+    class func buildNodes(_ totalNodes: Int) -> [BFSSearchReachNode] {
         
         var nodes = [BFSSearchReachNode]()
         
@@ -65,7 +65,7 @@ class BFSShortReach: NSObject {
         return nodes
     }
     
-    class func connectNodes(nodes: [BFSSearchReachNode], edges: [[Int]]) {
+    class func connectNodes(_ nodes: [BFSSearchReachNode], edges: [[Int]]) {
         
         for edge in edges {
             

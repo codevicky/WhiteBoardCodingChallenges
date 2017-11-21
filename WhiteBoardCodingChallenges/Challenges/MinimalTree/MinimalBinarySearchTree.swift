@@ -17,12 +17,12 @@ class MinimalBinarySearchTree: NSObject {
     
     // MARK: Construct
     
-    func constructBinarySearchTreeFromSortedArray(sortedArray: [Int]) {
+    func constructBinarySearchTreeFromSortedArray(_ sortedArray: [Int]) {
         
         constructBinarySearchTreeFromSortedArray(sortedArray, root: nil)
     }
     
-    private func constructBinarySearchTreeFromSortedArray(sortedArray: [Int], root: MinimalBinarySearchTreeNode?) {
+    fileprivate func constructBinarySearchTreeFromSortedArray(_ sortedArray: [Int], root: MinimalBinarySearchTreeNode?) {
     
         if sortedArray.count == 0 {
             
@@ -60,7 +60,7 @@ class MinimalBinarySearchTree: NSObject {
         }
     }
     
-    private func preOrderTraversal(node: MinimalBinarySearchTreeNode?) {
+    fileprivate func preOrderTraversal(_ node: MinimalBinarySearchTreeNode?) {
         
         if node != nil {
             
@@ -79,7 +79,7 @@ class MinimalBinarySearchTree: NSObject {
         }
     }
     
-    private func inOrderTraversal(node: MinimalBinarySearchTreeNode?) {
+    fileprivate func inOrderTraversal(_ node: MinimalBinarySearchTreeNode?) {
         
         if node != nil {
             
@@ -97,7 +97,7 @@ class MinimalBinarySearchTree: NSObject {
         }
     }
     
-    private func postOrderTraversal(node: MinimalBinarySearchTreeNode?) {
+    fileprivate func postOrderTraversal(_ node: MinimalBinarySearchTreeNode?) {
         
         if node != nil {
             

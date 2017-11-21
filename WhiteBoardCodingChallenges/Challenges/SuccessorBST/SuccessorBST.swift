@@ -13,7 +13,7 @@ class SuccessorBST: NSObject {
     
     // MARK: InOrderPreSorted
     
-    class func successorNode(predecessorNode: SuccessorBSTNode) -> SuccessorBSTNode? {
+    class func successorNode(_ predecessorNode: SuccessorBSTNode) -> SuccessorBSTNode? {
         guard let parent = predecessorNode.parent else {
             //predecessorNode is the root node
             return predecessorNode.right
@@ -23,7 +23,7 @@ class SuccessorBST: NSObject {
         var sorted = [SuccessorBSTNode]()
         inOrder(root, sorted: &sorted)
         
-        let indexOfPredecessorNode = sorted.indexOf(predecessorNode)
+        let indexOfPredecessorNode = sorted.index(of: predecessorNode)
         let indexOfNextNode = indexOfPredecessorNode! + 1
         
         if indexOfNextNode >= sorted.count {
@@ -33,7 +33,7 @@ class SuccessorBST: NSObject {
         }
     }
     
-    class func findRootFromNode(node: SuccessorBSTNode) -> SuccessorBSTNode {
+    class func findRootFromNode(_ node: SuccessorBSTNode) -> SuccessorBSTNode {
         guard let parent = node.parent else {
             //node is the root node
             return node
@@ -42,7 +42,7 @@ class SuccessorBST: NSObject {
         return findRootFromNode(parent)
     }
     
-    class func inOrder(node: SuccessorBSTNode?, inout sorted: [SuccessorBSTNode]) {
+    class func inOrder(_ node: SuccessorBSTNode?, sorted: inout [SuccessorBSTNode]) {
         if (node != nil) {
             inOrder(node!.left, sorted: &sorted)
             sorted.append(node!)

@@ -12,7 +12,7 @@ class ValidateBSTFactory: NSObject {
 
     // MARK: Build
     
-    class func buildBinaryTree(relationships: [[Int]]) -> ValidateBSTNode {
+    class func buildBinaryTree(_ relationships: [[Int]]) -> ValidateBSTNode {
         
         var nodes = [Int: ValidateBSTNode]()
         
@@ -39,7 +39,7 @@ class ValidateBSTFactory: NSObject {
         return rootNode(nodes)
     }
     
-    class func rootNode(nodes: [Int: ValidateBSTNode]) -> ValidateBSTNode {
+    class func rootNode(_ nodes: [Int: ValidateBSTNode]) -> ValidateBSTNode {
         var rootNode: ValidateBSTNode?
         
         for node in nodes.values {

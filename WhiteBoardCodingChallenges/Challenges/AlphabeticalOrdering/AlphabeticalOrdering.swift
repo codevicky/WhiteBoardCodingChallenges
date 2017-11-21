@@ -10,11 +10,11 @@ import UIKit
 
 class AlphabeticalOrdering: NSObject {
 
-    class func sort(string: String) -> String {
+    class func sort(_ string: String) -> String {
         
-        let seperateWords = string.characters.split(" ").map(String.init)
+        let seperateWords = string.characters.split(separator: " ").map(String.init)
         
-        let sortedWords = seperateWords.sort({ (i: String, j: String) -> Bool in
+        let sortedWords = seperateWords.sorted(by: { (i: String, j: String) -> Bool in
             
             var shortestWord: String
             
@@ -54,6 +54,6 @@ class AlphabeticalOrdering: NSObject {
             }
         })
         
-        return sortedWords.joinWithSeparator(" ")
+        return sortedWords.joined(separator: " ")
     }
 }

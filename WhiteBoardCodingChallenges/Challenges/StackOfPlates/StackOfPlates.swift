@@ -13,7 +13,7 @@ class StackOfPlates: NSObject {
 
     // MARK: Properties
     
-    private let stackCapacity = 2
+    fileprivate let stackCapacity = 2
     
     lazy var stacks: [StackOfPlatesStack] = {
        
@@ -22,7 +22,7 @@ class StackOfPlates: NSObject {
     
     // MARK: Actions
     
-    func push(value: Int) {
+    func push(_ value: Int) {
         
         var pushStack: StackOfPlatesStack
         

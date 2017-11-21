@@ -10,7 +10,7 @@ import UIKit
 
 class GreatestCommonDenominator: NSObject {
     
-    class func greatestCommonDenominator(lowest: Int, highest: Int) -> Int {
+    class func greatestCommonDenominator(_ lowest: Int, highest: Int) -> Int {
         
         if lowest == 0 && highest == 0 {
             
@@ -34,7 +34,7 @@ class GreatestCommonDenominator: NSObject {
         
         let lowestUpperBounds = lowest / 2
         
-        for index in (0...lowestUpperBounds).reverse() {
+        for index in (0...lowestUpperBounds).reversed() {
             
             if lowest % index == 0 && highest % index == 0 {
                 

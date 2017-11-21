@@ -47,11 +47,11 @@ class StackOfPlatesStack: NSObject {
     
     // MARK: Actions
     
-    func push(value: Int) {
+    func push(_ value: Int) {
         
         let node = StackOfPlatesNode.init(value: value)
         
-        nodes.insert(node, atIndex: 0)
+        nodes.insert(node, at: 0)
     }
     
     func pop() -> StackOfPlatesNode? {

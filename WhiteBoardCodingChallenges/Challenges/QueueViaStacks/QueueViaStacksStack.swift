@@ -26,9 +26,9 @@ class QueueViaStacksStack: NSObject {
     
     // MARK: Actions
     
-    func push(value: Int) {
+    func push(_ value: Int) {
         
-        nodes.insert(value, atIndex: 0)
+        nodes.insert(value, at: 0)
     }
     
     func pop() -> Int {

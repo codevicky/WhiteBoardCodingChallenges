@@ -28,7 +28,7 @@ class MinimalBinarySearchTreeNode: NSObject {
     
     // MARK: Child
     
-    func addChild(node: MinimalBinarySearchTreeNode) {
+    func addChild(_ node: MinimalBinarySearchTreeNode) {
         
         if node.value <= self.value {
             

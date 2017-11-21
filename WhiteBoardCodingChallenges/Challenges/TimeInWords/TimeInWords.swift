@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/the-time-in-words
 class TimeInWords: NSObject {
 
-    class func timeInWords(hour: Int, minute: Int) -> String {
+    class func timeInWords(_ hour: Int, minute: Int) -> String {
         
         var timeInWords = ""
         
@@ -74,7 +74,7 @@ class TimeInWords: NSObject {
         return timeInWords
     }
     
-    class func nextHour(hour: Int) -> Int {
+    class func nextHour(_ hour: Int) -> Int {
         
         var nextHour = 1
         
@@ -86,13 +86,13 @@ class TimeInWords: NSObject {
         return nextHour
     }
     
-    class func numericUnitToWordUnit(unit: Int) -> String {
+    class func numericUnitToWordUnit(_ unit: Int) -> String {
         
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.numberStyle = .SpellOutStyle
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .spellOut
         
-        let formattedNumber = numberFormatter.stringFromNumber(unit)!
+        let formattedNumber = numberFormatter.string(from: NSNumber(value: unit))!
         
-        return formattedNumber.stringByReplacingOccurrencesOfString("-", withString: " ")
+        return formattedNumber.replacingOccurrences(of: "-", with: " ")
     }
 }

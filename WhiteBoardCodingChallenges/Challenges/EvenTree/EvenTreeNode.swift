@@ -28,16 +28,16 @@ class EvenTreeNode: NSObject {
     
     // MARK: Child
     
-    func addChild(child: EvenTreeNode) {
+    func addChild(_ child: EvenTreeNode) {
         children.append(child)
         child.parent = self
     }
     
     // MARK: Parent
     
-    func removeChild(child: EvenTreeNode) {
-        let childIndex = children.indexOf(child)!
-        children.removeAtIndex(childIndex)
+    func removeChild(_ child: EvenTreeNode) {
+        let childIndex = children.index(of: child)!
+        children.remove(at: childIndex)
         child.parent = nil
     }
 }

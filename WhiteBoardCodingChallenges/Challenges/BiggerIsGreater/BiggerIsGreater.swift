@@ -7,16 +7,40 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 //https://www.hackerrank.com/challenges/bigger-is-greater
 class BiggerIsGreater: NSObject {
 
     //Copied from http://stackoverflow.com/questions/34968470/calculate-all-permutations-of-a-string-in-swift
-    class func possiblePermutations(n:Int, inout a:[String], inout permutations: [String]) {
+    class func possiblePermutations(_ n:Int, a:inout [String], permutations: inout [String]) {
         
         if n == 1 {
             
-            permutations.append(a.joinWithSeparator(""))
+            permutations.append(a.joined(separator: ""))
             
             return
         }
@@ -31,9 +55,9 @@ class BiggerIsGreater: NSObject {
         possiblePermutations(n-1, a: &a, permutations: &permutations)
     }
     
-    class func permutationGreaterThanOrginal(original: String) -> String {
+    class func permutationGreaterThanOrginal(_ original: String) -> String {
     
-        guard original != String(original.characters.reverse()) else {
+        guard original != String(original.characters.reversed()) else {
             
             return "no answer"
         }
@@ -64,9 +88,9 @@ class BiggerIsGreater: NSObject {
         return maximumValuePermutation!
     }
     
-    class func permutationGreaterThanOrginalAlt(original: String) -> String {
+    class func permutationGreaterThanOrginalAlt(_ original: String) -> String {
         
-        guard original != String(original.characters.reverse()) else {
+        guard original != String(original.characters.reversed()) else {
             
             return "no answer"
         }
@@ -77,7 +101,7 @@ class BiggerIsGreater: NSObject {
         
         BiggerIsGreater.possiblePermutations(characters.count, a: &characters, permutations: &permutations)
         
-        let sortedPermutations = permutations.filter{$0 > original}.sort{$1 > $0}
+        let sortedPermutations = permutations.filter{$0 > original}.sorted{$1 > $0}
         
         if sortedPermutations.count > 0 {
             
@@ -91,11 +115,11 @@ class BiggerIsGreater: NSObject {
     
     // MARK: Alt
     
-    class func possiblePermutationsAlt(n:Int, inout a:[String], original: String, inout greaterValue: String?) {
+    class func possiblePermutationsAlt(_ n:Int, a:inout [String], original: String, greaterValue: inout String?) {
         
         if n == 1 {
             
-            let permutation = a.joinWithSeparator("")
+            let permutation = a.joined(separator: "")
             
             if permutation > original {
                 

@@ -11,9 +11,9 @@ import Foundation
 //CtCI 1.4
 class PalindromePermutation: NSObject {
 
-    class func premutationCanBePalindrome(original: String) -> Bool {
+    class func premutationCanBePalindrome(_ original: String) -> Bool {
     
-        let spacesRemovedOriginal = original.stringByReplacingOccurrencesOfString(" ", withString: "").lowercaseString
+        let spacesRemovedOriginal = original.replacingOccurrences(of: " ", with: "").lowercased()
         
         if spacesRemovedOriginal.characters.count < 2 {
             
@@ -23,7 +23,7 @@ class PalindromePermutation: NSObject {
         //Not sure if we need this shortcut?
         if spacesRemovedOriginal.characters.count == 2 {
             
-            if spacesRemovedOriginal[spacesRemovedOriginal.characters.startIndex] == spacesRemovedOriginal[spacesRemovedOriginal.characters.endIndex.advancedBy(-1)] {
+            if spacesRemovedOriginal[spacesRemovedOriginal.characters.startIndex] == spacesRemovedOriginal[spacesRemovedOriginal.characters.index(spacesRemovedOriginal.characters.endIndex, offsetBy: -1)] {
                 
                 return true
             }
@@ -55,7 +55,7 @@ class PalindromePermutation: NSObject {
         return true
     }
     
-    class func countOccurrencesOfCharacters(original: String) -> [String : Int] {
+    class func countOccurrencesOfCharacters(_ original: String) -> [String : Int] {
         
         var occurrences = [String : Int]()
         

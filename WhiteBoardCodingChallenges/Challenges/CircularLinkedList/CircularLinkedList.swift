@@ -11,7 +11,7 @@ import UIKit
 //CtCI 2.8
 class CircularLinkedList: NSObject {
 
-    class func isCircular(linkedList: SingleLinkedList) -> Bool {
+    class func isCircular(_ linkedList: SingleLinkedList) -> Bool {
         
         var slow = linkedList.head
         var fast = slow!.next
@@ -30,7 +30,7 @@ class CircularLinkedList: NSObject {
         return false
     }
     
-    class func isCircularOnNode(linkedList: SingleLinkedList) -> LinkedListNode? {
+    class func isCircularOnNode(_ linkedList: SingleLinkedList) -> LinkedListNode? {
         
         var node = linkedList.head
         
@@ -53,7 +53,7 @@ class CircularLinkedList: NSObject {
         return nil
     }
     
-    class func isCircularFromNode(linkedList: SingleLinkedList) -> LinkedListNode? {
+    class func isCircularFromNode(_ linkedList: SingleLinkedList) -> LinkedListNode? {
         
         var advanced = linkedList.head?.next
         var followUp = linkedList.head

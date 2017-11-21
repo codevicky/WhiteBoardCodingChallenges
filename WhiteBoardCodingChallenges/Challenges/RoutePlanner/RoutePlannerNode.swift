@@ -23,7 +23,7 @@ class RoutePlannerNode: NSObject {
     
     // MARK: Connections
     
-    func addConnection(node: RoutePlannerNode) {
+    func addConnection(_ node: RoutePlannerNode) {
      
         connectedNodes.append(node)
     }

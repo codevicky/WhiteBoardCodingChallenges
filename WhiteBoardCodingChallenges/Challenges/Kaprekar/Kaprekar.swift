@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/kaprekar-numbers
 class Kaprekar: NSObject {
 
-    class func kaprekarRange(lowerBounds: Int, upperBounds: Int) -> [Int] {
+    class func kaprekarRange(_ lowerBounds: Int, upperBounds: Int) -> [Int] {
         
         var kaprekarRange = [Int]()
         
@@ -26,10 +26,10 @@ class Kaprekar: NSObject {
             
             if squaredString.characters.count > 1 {
                 
-                leftValue = Int(squaredString.substringToIndex(squaredString.characters.startIndex.advancedBy(leftCharacterCount)))!
+                leftValue = Int(squaredString.substring(to: squaredString.characters.index(squaredString.characters.startIndex, offsetBy: leftCharacterCount)))!
             }
             
-            let rightValue = Int(squaredString.substringFromIndex(squaredString.characters.startIndex.advancedBy(leftCharacterCount)))!
+            let rightValue = Int(squaredString.substring(from: squaredString.characters.index(squaredString.characters.startIndex, offsetBy: leftCharacterCount)))!
             
             if (leftValue + rightValue) == i {
                 

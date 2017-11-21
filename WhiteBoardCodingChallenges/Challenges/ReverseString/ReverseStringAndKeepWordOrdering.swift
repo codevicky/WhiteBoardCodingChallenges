@@ -11,17 +11,17 @@ import Foundation
 class ReverseStringAndKeepWordOrdering: NSObject {
 
     
-    class func reverse(string: String) -> String {
+    class func reverse(_ string: String) -> String {
         
-        let seperateWords = string.characters.split(" ").map(String.init)
+        let seperateWords = string.characters.split(separator: " ").map(String.init)
         
         var reversedSentence = [String]()
         
         for word in seperateWords {
             
-            reversedSentence.append(String(word.characters.reverse()))
+            reversedSentence.append(String(word.characters.reversed()))
         }
         
-        return reversedSentence.joinWithSeparator(" ")
+        return reversedSentence.joined(separator: " ")
     }
 }

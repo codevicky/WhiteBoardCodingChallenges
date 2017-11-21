@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/service-lane
 class ServiceLane: NSObject {
 
-    class func largestVechile(servicelane: [Int], entrance: Int, exit: Int) -> Int {
+    class func largestVechile(_ servicelane: [Int], entrance: Int, exit: Int) -> Int {
         
         var smallestWidth = 5
         

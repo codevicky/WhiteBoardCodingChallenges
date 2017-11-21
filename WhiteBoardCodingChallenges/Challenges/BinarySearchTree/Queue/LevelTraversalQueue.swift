@@ -19,7 +19,7 @@ class LevelTraversalQueue: NSObject {
     
     // MARK: Enqueue
     
-    func enqueue(node: BinarySearchTreeNode) {
+    func enqueue(_ node: BinarySearchTreeNode) {
         
         nodes.append(node)
     }

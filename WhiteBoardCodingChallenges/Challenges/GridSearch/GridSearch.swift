@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/the-grid-search
 class GridSearch: NSObject {
 
-    class func gridContainsPattern(grid: [String], pattern: [String]) -> Bool {
+    class func gridContainsPattern(_ grid: [String], pattern: [String]) -> Bool {
      
         for index in 0..<grid.count {
             
@@ -19,7 +19,7 @@ class GridSearch: NSObject {
             
             if grid.count >= (index + pattern.count) {
                 
-                if row.containsString(pattern[0]) {
+                if row.contains(pattern[0]) {
                     
                     let rangesOfFirstPattern = GridSearch.rangeOfAllOccurrancesOfPatternInRow(row, pattern: pattern[0])
                     
@@ -40,9 +40,9 @@ class GridSearch: NSObject {
         return false
     }
     
-    class func doesContainPatternMatchingRange(grid: [String], pattern: [String], range: Range<String.Index>) -> Bool {
+    class func doesContainPatternMatchingRange(_ grid: [String], pattern: [String], range: Range<String.Index>) -> Bool {
         
-        let patternRange = grid[0].rangeOfString(pattern[0], options: NSStringCompareOptions.CaseInsensitiveSearch, range: range, locale: nil)
+        let patternRange = grid[0].range(of: pattern[0], options: NSString.CompareOptions.caseInsensitive, range: range, locale: nil)
         
         if patternRange != nil {
             
@@ -62,20 +62,23 @@ class GridSearch: NSObject {
         return false
     }
     
-    class func rangeOfAllOccurrancesOfPatternInRow(row: String, pattern: String) -> [Range<String.Index>] {
+    class func rangeOfAllOccurrancesOfPatternInRow(_ row: String, pattern: String) -> [Range<String.Index>] {
         
         var occurrances = [Range<String.Index>]()
         
-        if row.containsString(pattern) {
+        if row.contains(pattern) {
             
             let patternCharacterCount = pattern.characters.count
             let limit = row.characters.endIndex
             
             for index in row.characters.indices {
+                guard let upperIndex = row.characters.index(index, offsetBy: patternCharacterCount, limitedBy: limit) else {
+                    continue
+                }
                 
-                let range = index..<index.advancedBy(patternCharacterCount, limit: limit)
+                let range = index..<upperIndex
                 
-                let patternRange = row.rangeOfString(pattern, options: NSStringCompareOptions.CaseInsensitiveSearch, range:range, locale: nil)
+                let patternRange = row.range(of: pattern, options: NSString.CompareOptions.caseInsensitive, range:range, locale: nil)
                 
                 if let patternRange = patternRange {
                     

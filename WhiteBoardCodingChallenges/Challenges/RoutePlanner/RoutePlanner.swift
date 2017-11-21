@@ -17,14 +17,14 @@ class RoutePlanner: NSObject {
     
     // MARK: Nodes
     
-    func addNode(node: RoutePlannerNode) {
+    func addNode(_ node: RoutePlannerNode) {
         
         nodes?.append(node)
     }
     
     // MARK: Path
     
-    func pathExistsBetweenNodes(source: RoutePlannerNode, destination: RoutePlannerNode) -> Bool {
+    func pathExistsBetweenNodes(_ source: RoutePlannerNode, destination: RoutePlannerNode) -> Bool {
         
         let queue = RoutePlannerQueue()
         
@@ -55,7 +55,7 @@ class RoutePlanner: NSObject {
         return false
     }
     
-    func pathBetweenNodes(source: RoutePlannerNode, destination: RoutePlannerNode) -> [RoutePlannerNode]? {
+    func pathBetweenNodes(_ source: RoutePlannerNode, destination: RoutePlannerNode) -> [RoutePlannerNode]? {
         
         let queue = RoutePlannerQueue()
         

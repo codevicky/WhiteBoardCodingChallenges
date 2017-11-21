@@ -7,13 +7,48 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 //CtCI 4.5
 class ValidateBST: NSObject {
     
     // MARK: InOrder
     
-    class func inOrderTraversalIsBST(root: ValidateBSTNode) -> Bool {
+    class func inOrderTraversalIsBST(_ root: ValidateBSTNode) -> Bool {
         var order = [ValidateBSTNode]()
         inOrderTraversal(root, order: &order)
         
@@ -26,7 +61,7 @@ class ValidateBST: NSObject {
         return true
     }
     
-    class func inOrderTraversal(root: ValidateBSTNode?, inout order: [ValidateBSTNode]) {
+    class func inOrderTraversal(_ root: ValidateBSTNode?, order: inout [ValidateBSTNode]) {
         if let root = root {
             inOrderTraversal(root.left, order: &order)
             order.append(root)
@@ -36,12 +71,12 @@ class ValidateBST: NSObject {
     
     // MARK: MaxMin
     
-    class func maxMinIsBST(root: ValidateBSTNode) -> Bool {
+    class func maxMinIsBST(_ root: ValidateBSTNode) -> Bool {
         
         return maxMinIsBST(root, min: nil, max: nil)
     }
     
-    class func maxMinIsBST(root: ValidateBSTNode?, min: Int?, max: Int?) -> Bool {
+    class func maxMinIsBST(_ root: ValidateBSTNode?, min: Int?, max: Int?) -> Bool {
         guard let root = root else {
             return true
         }

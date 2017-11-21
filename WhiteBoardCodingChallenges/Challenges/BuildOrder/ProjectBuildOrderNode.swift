@@ -33,7 +33,7 @@ class ProjectBuildOrderNode: NSObject {
     
     // MARK: Dependency
     
-    func addDependency(dependency: ProjectBuildOrderNode) {
+    func addDependency(_ dependency: ProjectBuildOrderNode) {
         
         dependencies.append(dependency)
     }

@@ -30,7 +30,7 @@ class ReconstructBinaryTreeNode: NSObject {
     
     // MARK: Nodes
     
-    func addNodeAsChild(node: ReconstructBinaryTreeNode) {
+    func addNodeAsChild(_ node: ReconstructBinaryTreeNode) {
         
         if left == nil {
             

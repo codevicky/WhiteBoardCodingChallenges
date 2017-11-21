@@ -13,7 +13,7 @@ class MaximizeSum: NSObject {
     
     // MARK: Maximum
     
-    class func maximizeSum(values: [Int], modulo: Int) -> Int {
+    class func maximizeSum(_ values: [Int], modulo: Int) -> Int {
         var prefix = [Int]()
         var current = 0
         for value in values {
@@ -23,7 +23,7 @@ class MaximizeSum: NSObject {
         
         var ret = prefix[0];
         for i in 1..<values.count {
-            for j in (0...(i-1)).reverse() {
+            for j in (0...(i-1)).reversed() {
                 ret = max(ret, (prefix[i] - prefix[j] + modulo) % modulo)
             }
             ret = max(ret, prefix[i])

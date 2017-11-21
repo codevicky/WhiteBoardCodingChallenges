@@ -24,7 +24,7 @@ class BFSSearchReachNode: NSObject {
     
     // MARK: Add
     
-    func addRelationshipWithNode(node: BFSSearchReachNode) {
+    func addRelationshipWithNode(_ node: BFSSearchReachNode) {
         
         if !nodes.contains(node) {
             nodes.append(node)

@@ -16,7 +16,7 @@ class BinarySearchTree: NSObject {
     
     // MARK: Add
     
-    func addValue(value: Int) {
+    func addValue(_ value: Int) {
         
         if root == nil {
             
@@ -28,7 +28,7 @@ class BinarySearchTree: NSObject {
         }
     }
     
-    private func addValue(value: Int, root: BinarySearchTreeNode) {
+    fileprivate func addValue(_ value: Int, root: BinarySearchTreeNode) {
         
         if value <= root.value  {
             
@@ -56,7 +56,7 @@ class BinarySearchTree: NSObject {
     
     // MARK: Traversal
     
-    private func addNodeToOrdering(node: BinarySearchTreeNode, inout ordering: String) {
+    fileprivate func addNodeToOrdering(_ node: BinarySearchTreeNode, ordering: inout String) {
     
         if ordering.characters.count > 0 {
             
@@ -80,7 +80,7 @@ class BinarySearchTree: NSObject {
         return ""
     }
     
-    private func preOrderTraversal(node: BinarySearchTreeNode?, inout ordering: String) {
+    fileprivate func preOrderTraversal(_ node: BinarySearchTreeNode?, ordering: inout String) {
         
         if node != nil {
             
@@ -105,7 +105,7 @@ class BinarySearchTree: NSObject {
         return ""
     }
     
-    private func inOrderTraversal(node: BinarySearchTreeNode?, inout ordering: String) {
+    fileprivate func inOrderTraversal(_ node: BinarySearchTreeNode?, ordering: inout String) {
         
         if node != nil {
     
@@ -129,7 +129,7 @@ class BinarySearchTree: NSObject {
         return ""
     }
     
-    private func postOrderTraversal(node: BinarySearchTreeNode?, inout ordering: String) {
+    fileprivate func postOrderTraversal(_ node: BinarySearchTreeNode?, ordering: inout String) {
         
         if node != nil {
             

@@ -16,7 +16,7 @@ class SingleLinkedList: NSObject {
     
     // MARK: Add
     
-    func addNode(node: LinkedListNode) {
+    func addNode(_ node: LinkedListNode) {
         
         if head == nil {
             

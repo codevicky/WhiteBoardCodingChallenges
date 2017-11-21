@@ -10,7 +10,7 @@ import UIKit
 
 class DecimalToBinary: NSObject {
 
-    class func convertDecimalToBinary(decimal: Int) -> String {
+    class func convertDecimalToBinary(_ decimal: Int) -> String {
         
         var convertingDecimal = decimal
         var binaryValue = ""
@@ -20,9 +20,9 @@ class DecimalToBinary: NSObject {
             let modValue = convertingDecimal % 2
             convertingDecimal = convertingDecimal / 2
             
-            binaryValue = binaryValue.stringByAppendingString("\(modValue)")
+            binaryValue = binaryValue + "\(modValue)"
         }
         
-        return String(binaryValue.characters.reverse())
+        return String(binaryValue.characters.reversed())
     }
 }

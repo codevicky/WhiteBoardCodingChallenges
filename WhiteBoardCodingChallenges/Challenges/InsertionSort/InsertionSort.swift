@@ -11,14 +11,14 @@ import UIKit
 class InsertionSort: NSObject {
 
     //https://www.hackerrank.com/challenges/insertionsort1
-    class func sortRightMostElementIntoCorrectPosition(array: [Int]) -> [[Int]] {
+    class func sortRightMostElementIntoCorrectPosition(_ array: [Int]) -> [[Int]] {
         
         var intermediateSteps = [[Int]]()
         
         let valueToBeSorted = array.last!
         var intermediateStep = array
         
-        for index in (0..<(array.count - 1)).reverse() {
+        for index in (0..<(array.count - 1)).reversed() {
             
             intermediateStep[index + 1] = intermediateStep[index]
             
@@ -46,7 +46,7 @@ class InsertionSort: NSObject {
     }
     
     //https://www.hackerrank.com/challenges/insertionsort2
-    class func sort(array: [Int]) -> [[Int]] {
+    class func sort(_ array: [Int]) -> [[Int]] {
         
         var sortedSteps = [[Int]]()
         var sortingArray = array
@@ -55,7 +55,7 @@ class InsertionSort: NSObject {
             
             let value = array[index]
             
-            for sortingIndex in (0..<index).reverse() {
+            for sortingIndex in (0..<index).reversed() {
                 
                 let comparisonValue = sortingArray[sortingIndex]
                 
@@ -77,7 +77,7 @@ class InsertionSort: NSObject {
     }
     
     //https://www.hackerrank.com/challenges/runningtime
-    class func numberOfShiftsToSort(array: [Int]) -> Int {
+    class func numberOfShiftsToSort(_ array: [Int]) -> Int {
         
         var numberOfShiftsToSort = 0
         var sortingArray = array
@@ -86,7 +86,7 @@ class InsertionSort: NSObject {
             
             let value = array[index]
             
-            for sortingIndex in (0..<index).reverse() {
+            for sortingIndex in (0..<index).reversed() {
                 
                 let comparisonValue = sortingArray[sortingIndex]
                 

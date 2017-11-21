@@ -11,11 +11,11 @@ import UIKit
 //https://www.hackerrank.com/challenges/staircase
 class Staircase: NSObject {
 
-    class func staircase(height: Int) -> String {
+    class func staircase(_ height: Int) -> String {
         
         var staircaseString = ""
         
-        for row in (0..<height).reverse() {
+        for row in (0..<height).reversed() {
             
             var rowString = ""
             

@@ -11,7 +11,7 @@ import Foundation
 //https://www.hackerrank.com/challenges/caesar-cipher-1
 class CaesarCipher: NSObject {
 
-    class func encrypt(originalString: String, rotate: Int) -> String {
+    class func encrypt(_ originalString: String, rotate: Int) -> String {
         
         let alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -21,7 +21,7 @@ class CaesarCipher: NSObject {
         for letter in alphabet.characters {
             
             uncapitalisedLetters.append(letter)
-            capitalisedLetters.append(Character(String(letter).capitalizedString))
+            capitalisedLetters.append(Character(String(letter).capitalized))
         }
         
         var encryptedString = ""
@@ -45,9 +45,9 @@ class CaesarCipher: NSObject {
         return encryptedString
     }
     
-    class func retrieveCharacterAfterRotation(character: Character, characterSet: [Character], rotate: Int) -> Character {
+    class func retrieveCharacterAfterRotation(_ character: Character, characterSet: [Character], rotate: Int) -> Character {
         
-        let index = characterSet.indexOf(character)!
+        let index = characterSet.index(of: character)!
         let indexAfterRotation = index + rotate
         var indexForEncryptedCharacter = indexAfterRotation
         

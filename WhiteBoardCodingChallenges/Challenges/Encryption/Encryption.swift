@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/encryption
 class Encryption: NSObject {
 
-    class func encrypt(originalString: String) -> String {
+    class func encrypt(_ originalString: String) -> String {
         
         var rowsCount = Int(floor(sqrt(Double(originalString.characters.count))))
         let columnsCount = Int(ceil(sqrt(Double(originalString.characters.count))))
@@ -30,16 +30,16 @@ class Encryption: NSObject {
             let start = rowIndex * columnsCount
             let end = start + columnsCount
             
-            let startRange = originalString.characters.startIndex.advancedBy(start)
+            let startRange = originalString.characters.index(originalString.characters.startIndex, offsetBy: start)
             
             var endRange = originalString.characters.endIndex
             
             if originalString.characters.count > end {
                 
-                endRange = originalString.characters.startIndex.advancedBy(end)
+                endRange = originalString.characters.index(originalString.characters.startIndex, offsetBy: end)
             }
             
-            let substring = originalString.substringWithRange(startRange..<endRange)
+            let substring = originalString.substring(with: startRange..<endRange)
             
             for character in substring.characters {
                 

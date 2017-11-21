@@ -10,17 +10,17 @@ import UIKit
 
 class Palindrome: NSObject {
 
-    class func isPalindrome(string: String) -> Bool {
+    class func isPalindrome(_ string: String) -> Bool {
         
         if string.characters.count < 2 {
             
             return false
         }
         
-        let lowercaseString = string.lowercaseString
+        let lowercaseString = string.lowercased()
         
         var lowerIndex = lowercaseString.startIndex
-        var upperIndex = lowercaseString.endIndex.advancedBy(-1)
+        var upperIndex = lowercaseString.characters.index(lowercaseString.endIndex, offsetBy: -1)
         
         while lowerIndex < upperIndex {
             
@@ -29,8 +29,8 @@ class Palindrome: NSObject {
                 return false
             }
             
-            lowerIndex = lowerIndex.advancedBy(1)
-            upperIndex = upperIndex.advancedBy(-1)
+            lowerIndex = string.index(lowerIndex, offsetBy: 1)
+            upperIndex = string.index(upperIndex, offsetBy: -1)
         }
         
         return true

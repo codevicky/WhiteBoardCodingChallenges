@@ -12,8 +12,8 @@ import UIKit
 class LarrysArray: NSObject {
 
     enum Sequence: Int {
-        case BCA
-        case CAB
+        case bca
+        case cab
         
         static let count: Int = {
             
@@ -27,7 +27,7 @@ class LarrysArray: NSObject {
         }()
     }
     
-    class func canRobotSort(values: [Int]) -> Bool {
+    class func canRobotSort(_ values: [Int]) -> Bool {
         
         var valuesAfterRotation = values
     
@@ -54,9 +54,9 @@ class LarrysArray: NSObject {
         }
     }
     
-    class func attemptToMoveValueIntoPosition(values: [Int], valueToMove: Int) -> [Int] {
+    class func attemptToMoveValueIntoPosition(_ values: [Int], valueToMove: Int) -> [Int] {
         
-        let index = values.indexOf(valueToMove)!
+        let index = values.index(of: valueToMove)!
         
         if index == (valueToMove - 1) {
             
@@ -68,22 +68,22 @@ class LarrysArray: NSObject {
             
             if index == (indexValueShouldBeMovedTo + 1) {
                 
-                return rotate(values, sequence: .BCA, startingIndex: indexValueShouldBeMovedTo)
+                return rotate(values, sequence: .bca, startingIndex: indexValueShouldBeMovedTo)
             }
             else if index == (indexValueShouldBeMovedTo + 2) {
             
-                return rotate(values, sequence: .CAB, startingIndex: indexValueShouldBeMovedTo)
+                return rotate(values, sequence: .cab, startingIndex: indexValueShouldBeMovedTo)
             }
             else {
                 
-                let valuesAfterRotation = rotate(values, sequence: .CAB, startingIndex: (index - 2))
+                let valuesAfterRotation = rotate(values, sequence: .cab, startingIndex: (index - 2))
                 
                 return attemptToMoveValueIntoPosition(valuesAfterRotation, valueToMove: valueToMove)
             }
         }
     }
     
-    class func rotate(values: [Int], sequence: Sequence, startingIndex: Int) -> [Int] {
+    class func rotate(_ values: [Int], sequence: Sequence, startingIndex: Int) -> [Int] {
         
         var rotatedValues = values
         
@@ -92,7 +92,7 @@ class LarrysArray: NSObject {
         let indexOfCBeforeRotation = startingIndex + 2
         
         switch sequence {
-        case .BCA:
+        case .bca:
         
             let indexOfAAfterRotation = startingIndex + 2
             let indexOfBAftereRotation = startingIndex
@@ -102,7 +102,7 @@ class LarrysArray: NSObject {
             rotatedValues[indexOfBAftereRotation] = values[indexOfBBeforeRotation]
             rotatedValues[indexOfCAfterRotation] = values[indexOfCBeforeRotation]
             
-        case .CAB:
+        case .cab:
             
             let indexOfAAfterRotation = startingIndex + 1
             let indexOfBAftereRotation = startingIndex + 2
@@ -118,7 +118,7 @@ class LarrysArray: NSObject {
     
     // MARK: Alt
     
-    class func canRobotSortAlt(values: [Int]) -> Bool {
+    class func canRobotSortAlt(_ values: [Int]) -> Bool {
         
         let isInversionsCountOdd = (LarrysArray.countOfInversions(values) % 2 != 0)
         
@@ -131,7 +131,7 @@ class LarrysArray: NSObject {
     }
     
     //https://www.cs.bham.ac.uk/~mdr/teaching/modules04/java2/TilesSolvability.html
-    class func countOfInversions(values: [Int]) -> Int {
+    class func countOfInversions(_ values: [Int]) -> Int {
         
         var inversions = 0
         

@@ -7,11 +7,35 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 //https://www.hackerrank.com/challenges/cavity-map
 class CavityMap: NSObject {
     
-    class func generateCavityMap(map: [String]) -> [String] {
+    class func generateCavityMap(_ map: [String]) -> [String] {
         
         let cavity = "X"
         
@@ -27,12 +51,12 @@ class CavityMap: NSObject {
                 
                 for cellIndex in cavityRow.characters.indices {
                     
-                    if cellIndex != cavityRow.characters.startIndex && cellIndex != cavityRow.characters.endIndex.advancedBy(-1) {
+                    if cellIndex != cavityRow.characters.startIndex && cellIndex != cavityRow.characters.index(cavityRow.characters.endIndex, offsetBy: -1) {
                         
                         let cell = String(cavityRow.characters[cellIndex])
                         
-                        let previousCellInRow = String(cavityRow.characters[cellIndex.advancedBy(-1)])
-                        let nextCellInRow = String(cavityRow.characters[cellIndex.advancedBy(1)])
+                        let previousCellInRow = String(cavityRow.characters[cavityRow.index(cellIndex, offsetBy: -1)])
+                        let nextCellInRow = String(cavityRow.characters[cavityRow.index(cellIndex, offsetBy: 1)])
                         
                         let previousRow = cavityMap[(rowIndex - 1)]
                         let nextRow = cavityMap[(rowIndex + 1)]
@@ -44,7 +68,7 @@ class CavityMap: NSObject {
                             
                             if Int(cell) > Int(previousCellInRow) && Int(cell) > Int(nextCellInRow) && Int(cell) > Int(cellInPreviousRow) && Int(cell) > Int(cellInNextRow){
                                 
-                                cavityRow.replaceRange(cellIndex..<cellIndex.advancedBy(1), with: cavity)
+                                cavityRow.replaceSubrange(cellIndex..<cavityRow.index(cellIndex, offsetBy: 1), with: cavity)
                             }
                         }
                     }

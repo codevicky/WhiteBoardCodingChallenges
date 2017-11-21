@@ -25,7 +25,7 @@ class QueueViaStacks: NSObject {
     
     // MARK: Transfer
     
-    private func transferContents(sourceStack: QueueViaStacksStack, destinationStack: QueueViaStacksStack) {
+    fileprivate func transferContents(_ sourceStack: QueueViaStacksStack, destinationStack: QueueViaStacksStack) {
         
         for _ in 0..<sourceStack.nodes.count {
             
@@ -35,7 +35,7 @@ class QueueViaStacks: NSObject {
     
     // MARK: Actions
     
-    func enqueue(value: Int) {
+    func enqueue(_ value: Int) {
         
         if !dequeueStack.isEmpty() {
             

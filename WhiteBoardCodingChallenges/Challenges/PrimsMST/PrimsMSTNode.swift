@@ -32,7 +32,7 @@ class PrimsMSTNode: NSObject {
     
     // MARK: Edge
     
-    func addEdge(destination: PrimsMSTNode, weight: Int) {
+    func addEdge(_ destination: PrimsMSTNode, weight: Int) {
         
         let existingEdge = edges[destination]
         

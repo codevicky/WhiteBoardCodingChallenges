@@ -12,7 +12,7 @@ class MissingNumbers: NSObject {
 
     // MARK: Missing
     
-    class func missingNumbers(complete: [Int], incomplete: [Int]) -> [Int] {
+    class func missingNumbers(_ complete: [Int], incomplete: [Int]) -> [Int] {
         var occurrences = [Int: Int]()
         
         for i in 0..<complete.count {
@@ -40,7 +40,7 @@ class MissingNumbers: NSObject {
             }
         }
         
-        return missing.sort({ (a, b) -> Bool in
+        return missing.sorted(by: { (a, b) -> Bool in
             return b > a
         })
     }

@@ -27,7 +27,7 @@ class BalancedBSTNode: NSObject {
     
     // MARK: Nodes
     
-    func addNodeAsChild(node: BalancedBSTNode) {
+    func addNodeAsChild(_ node: BalancedBSTNode) {
         if left == nil {
             left = node
         } else {

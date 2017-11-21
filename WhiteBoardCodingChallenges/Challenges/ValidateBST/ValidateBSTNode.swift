@@ -26,7 +26,7 @@ class ValidateBSTNode: NSObject {
     
     // MARK: Nodes
     
-    func addNodeAsChild(node: ValidateBSTNode) {
+    func addNodeAsChild(_ node: ValidateBSTNode) {
         if left == nil {
             left = node
         } else {

@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/utopian-tree
 class UtopianTree: NSObject {
 
-    class func heightOfTree(cycles: Int) -> Int {
+    class func heightOfTree(_ cycles: Int) -> Int {
     
         var heightOfTree = 1
         

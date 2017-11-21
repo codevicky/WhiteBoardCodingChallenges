@@ -26,7 +26,7 @@ class SuccessorBSTNode: NSObject {
     
     // MARK: Nodes
     
-    func addNodeAsChild(node: SuccessorBSTNode) {
+    func addNodeAsChild(_ node: SuccessorBSTNode) {
         if left == nil {
             left = node
         } else {

@@ -12,7 +12,7 @@ class Prime: NSObject {
 
     // MARK: isPrime
     
-    class func isPrime(value: Int) -> Bool {
+    class func isPrime(_ value: Int) -> Bool {
         
         if value < 4 {
             
@@ -48,7 +48,7 @@ class Prime: NSObject {
     
     // MARK: PrimeFactors
     
-    class func primeFactors(value: Int) {
+    class func primeFactors(_ value: Int) {
 
         var runningTotal = value
         

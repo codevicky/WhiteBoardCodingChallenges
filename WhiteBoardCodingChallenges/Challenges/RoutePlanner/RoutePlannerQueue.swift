@@ -26,7 +26,7 @@ class RoutePlannerQueue: NSObject {
     
     // MARK: Actions
     
-    func enqueue(node: RoutePlannerNode) {
+    func enqueue(_ node: RoutePlannerNode) {
         
         nodes.append(node)
     }

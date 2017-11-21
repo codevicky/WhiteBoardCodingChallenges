@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/cut-the-sticks
 class CutTheSticks: NSObject {
 
-    class func cutUntilDone(sticks: [Int]) -> [Int] {
+    class func cutUntilDone(_ sticks: [Int]) -> [Int] {
         
         var sticksRemainingAtEachCut = [Int]()
         
@@ -21,7 +21,7 @@ class CutTheSticks: NSObject {
             
             sticksRemainingAtEachCut.append(sticksToBeCut.filter{$0 > 0}.count)
             
-            let minStickLength = sticksToBeCut.filter{$0 > 0}.minElement()!
+            let minStickLength = sticksToBeCut.filter{$0 > 0}.min()!
             
             for index in 0..<sticksToBeCut.count {
                 

@@ -12,7 +12,7 @@ class MaxHeap: NSObject {
     
     // MARK: Construct
     
-    class func buildMaxHeap(input: [Int]) -> [Int] {
+    class func buildMaxHeap(_ input: [Int]) -> [Int] {
         
         if input.count < 2 {
             
@@ -33,7 +33,7 @@ class MaxHeap: NSObject {
     
     // MARK: Heapify
     
-    class func maxHeapify(inout heap: [Int], indexRoot: Int) {
+    class func maxHeapify(_ heap: inout [Int], indexRoot: Int) {
         
         if leftLeafIndex(indexRoot) > heapLastIndex(heap) {
             
@@ -79,7 +79,7 @@ class MaxHeap: NSObject {
     
     // MARK: Exchange
     
-    class func exchange<T>(inout heap: [T], i:Int, j:Int) {
+    class func exchange<T>(_ heap: inout [T], i:Int, j:Int) {
         
         let temp:T = heap[i]
         heap[i] = heap[j]
@@ -88,21 +88,21 @@ class MaxHeap: NSObject {
     
     // MARK: Index
     
-    class func leftLeafIndex(rootIndex: Int) -> Int {
+    class func leftLeafIndex(_ rootIndex: Int) -> Int {
         
         let heapIndex = (rootIndex + 1)
         
         return ((heapIndex * 2) - 1)
     }
     
-    class func rightLeafIndex(rootIndex: Int) -> Int {
+    class func rightLeafIndex(_ rootIndex: Int) -> Int {
         
         let heapIndex = (rootIndex + 1)
         
         return (heapIndex * 2)
     }
     
-    class func heapLastIndex(heap: [Int]) -> Int {
+    class func heapLastIndex(_ heap: [Int]) -> Int {
         
         return (heap.count - 1)
     }

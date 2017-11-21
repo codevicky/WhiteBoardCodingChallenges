@@ -28,9 +28,9 @@ class SingleTextFieldViewController: UIViewController {
     
     // MARK: Reverse
     
-    func reverse(string: String) {
+    func reverse(_ string: String) {
         
-        print(string.characters.reverse())
+        print(string.characters.reversed())
     }
 }
 
@@ -38,12 +38,12 @@ class SingleTextFieldViewController: UIViewController {
 
 extension SingleTextFieldViewController: UITextFieldDelegate {
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         return true
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if let text = textField.text {
             

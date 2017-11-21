@@ -25,7 +25,7 @@ class Beast: NSObject {
      5 = 33333
      11 = 55555533333
      */
-    class func decentNumber(range: Int) -> String {
+    class func decentNumber(_ range: Int) -> String {
         
         if range < 3 {
             
@@ -44,7 +44,7 @@ class Beast: NSObject {
             return decentNumber
         }
         
-        for decreasedRange in (0..<range).reverse() {
+        for decreasedRange in (0..<range).reversed() {
             
             if decreasedRange % 3 == 0 && (range - decreasedRange) % 5 == 0 {
 

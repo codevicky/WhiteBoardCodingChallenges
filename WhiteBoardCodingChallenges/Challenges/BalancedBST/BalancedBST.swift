@@ -13,7 +13,7 @@ class BalancedBST: NSObject {
 
     // MARK: Balanced
     
-    class func isBalancedBST(root: BalancedBSTNode) -> Bool {
+    class func isBalancedBST(_ root: BalancedBSTNode) -> Bool {
         calculateHeightOfNodes(root)
         
         var queue = [BalancedBSTNode]()
@@ -45,7 +45,7 @@ class BalancedBST: NSObject {
     
     // MARK: Heights
     
-    class func calculateHeightOfNodes(root: BalancedBSTNode) -> Int {
+    class func calculateHeightOfNodes(_ root: BalancedBSTNode) -> Int {
         var leftHeight = 0
         if let left = root.left {
             leftHeight += 1

@@ -12,7 +12,7 @@ class BalancedBSTFactory: NSObject {
 
     // MARK: Build
     
-    class func buildBinaryTree(relationships: [[Int]]) -> BalancedBSTNode {
+    class func buildBinaryTree(_ relationships: [[Int]]) -> BalancedBSTNode {
         
         var nodes = [Int: BalancedBSTNode]()
         
@@ -39,7 +39,7 @@ class BalancedBSTFactory: NSObject {
         return rootNode(nodes)
     }
     
-    class func rootNode(nodes: [Int: BalancedBSTNode]) -> BalancedBSTNode {
+    class func rootNode(_ nodes: [Int: BalancedBSTNode]) -> BalancedBSTNode {
         var rootNode: BalancedBSTNode?
         
         for node in nodes.values {

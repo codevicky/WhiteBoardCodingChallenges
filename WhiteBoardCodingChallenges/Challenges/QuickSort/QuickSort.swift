@@ -13,7 +13,7 @@ class QuickSort: NSObject {
     // MARK: QuickSort
     
     //https://www.hackerrank.com/challenges/quicksort1
-    class func sortIntoGroups(array: [Int], indexOfPivot: Int) -> [Int] {
+    class func sortIntoGroups(_ array: [Int], indexOfPivot: Int) -> [Int] {
         
         var left = [Int]()
         var right = [Int]()
@@ -35,7 +35,7 @@ class QuickSort: NSObject {
         return left + right
     }
     
-    class func sort(array: [Int]) -> [Int] {
+    class func sort(_ array: [Int]) -> [Int] {
         
         if array.count == 0 {
             
@@ -61,10 +61,14 @@ class QuickSort: NSObject {
             }
         }
         
-        return sort(left) + [pivot] + sort(right)
+        let leftResult = sort(left)
+        let pivotResult = [pivot]
+        let rightResult = sort(right)
+        
+        return leftResult + pivotResult + rightResult
     }
     
-    class func sortAlt(array: [Int]) -> [Int] {
+    class func sortAlt(_ array: [Int]) -> [Int] {
         
         if array.count == 0 {
             
@@ -75,23 +79,27 @@ class QuickSort: NSObject {
         
         let strippedArray = array[1..<array.count]
         
-        let left = strippedArray.filter {$0 <= pivot}
+        let left = strippedArray.filter{$0 <= pivot}
         let right = strippedArray.filter{$0 > pivot}
         
-        return sort(left) + [pivot] + sort(right)
+        let leftResult = sort(left)
+        let pivotResult = [pivot]
+        let rightResult = sort(right)
+        
+        return leftResult + pivotResult + rightResult
     }
     
     // MARK: InPlace
     
     //https://www.hackerrank.com/challenges/quicksort3
-    class func sortInPlace(inout array: [Int], leftIndex: Int, rightIndex: Int) {
+    class func sortInPlace(_ array: inout [Int], leftIndex: Int, rightIndex: Int) {
         
         //if this isn't true then the array is sorted
         if leftIndex < rightIndex {
             
             let partionIndex = partion(&array, leftIndex: leftIndex, rightIndex: rightIndex)
             
-            print(array.map(String.init).joinWithSeparator(" "))
+            print(array.map(String.init).joined(separator: " "))
             
             QuickSort.sortInPlace(&array, leftIndex: leftIndex, rightIndex: partionIndex - 1)
             QuickSort.sortInPlace(&array, leftIndex: partionIndex + 1, rightIndex: rightIndex)
@@ -99,7 +107,7 @@ class QuickSort: NSObject {
     }
     
     //swap elements so that they are on the correct side of the partion, we don't care about the ordering anymore than that here
-    class func swap(inout array: [Int], aIndex: Int, bIndex: Int) {
+    class func swap(_ array: inout [Int], aIndex: Int, bIndex: Int) {
         
         let temp = array[aIndex]
         
@@ -108,7 +116,7 @@ class QuickSort: NSObject {
         
     }
     
-    class func partion(inout array: [Int], leftIndex: Int, rightIndex: Int) -> Int {
+    class func partion(_ array: inout [Int], leftIndex: Int, rightIndex: Int) -> Int {
         
         let pivotValue = array[rightIndex]
         

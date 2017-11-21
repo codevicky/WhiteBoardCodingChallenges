@@ -14,9 +14,9 @@ class TheatreGuests: NSObject {
 
     // MARK: MaximumOneMoveEach
     
-    class func sortGuestsInSeatsAlt(inout guestsInSeats: [String]) {
+    class func sortGuestsInSeatsAlt(_ guestsInSeats: inout [String]) {
         var guests = [String: [Int]]()
-        for (index, guest) in guestsInSeats.enumerate() {
+        for (index, guest) in guestsInSeats.enumerated() {
             var partners = guests[guest]
             if partners == nil {
                 partners = [Int]()
@@ -29,7 +29,7 @@ class TheatreGuests: NSObject {
         var index = 0
         
         while partners < ((guestsInSeats.count/2)-1) {
-            print("index: \(index), seating: \(guestsInSeats.joinWithSeparator(" "))")
+            print("index: \(index), seating: \(guestsInSeats.joined(separator: " "))")
             
             let guestToBePartneredUp = guestsInSeats[index]
             var guestToBeMovedIndex: Int
@@ -57,7 +57,7 @@ class TheatreGuests: NSObject {
                 
                 var guestToBeMovedIndexes = guests[guestToBeMoved]!
                 
-                for (index, guestIndex) in guestToBeMovedIndexes.enumerate() {
+                for (index, guestIndex) in guestToBeMovedIndexes.enumerated() {
                     if guestIndex == guestToBeMovedIndex {
                         guestToBeMovedIndexes[index] = guestToBePartneredUpPartnersIndex
                         guests[guestToBeMoved] = guestToBeMovedIndexes
@@ -76,7 +76,7 @@ class TheatreGuests: NSObject {
     
     // MARK: MultipleMoves
     
-    class func sortGuestsInSeats(inout guestsInSeats: [String]) {
+    class func sortGuestsInSeats(_ guestsInSeats: inout [String]) {
         var index = 1
         while index < guestsInSeats.count {
             if guestsInSeats[index-1] != guestsInSeats[index] {
@@ -90,8 +90,8 @@ class TheatreGuests: NSObject {
         }
     }
     
-    class func findGuestsPartnerIndex(guestsInSeats: [String], partner: String) -> Int {
-        for (index, guest) in guestsInSeats.enumerate() {
+    class func findGuestsPartnerIndex(_ guestsInSeats: [String], partner: String) -> Int {
+        for (index, guest) in guestsInSeats.enumerated() {
             if guest == partner {
                 return index
             }
@@ -100,7 +100,7 @@ class TheatreGuests: NSObject {
         return -1
     }
     
-    class func swap(inout data: [String], source: Int, destination: Int) {
+    class func swap(_ data: inout [String], source: Int, destination: Int) {
         let temp = data[destination]
         data[destination] = data[source]
         data[source] = temp

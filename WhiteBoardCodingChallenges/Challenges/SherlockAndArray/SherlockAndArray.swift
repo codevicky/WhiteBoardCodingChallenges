@@ -10,7 +10,7 @@ import UIKit
 
 class SherlockAndArray: NSObject {
 
-    class func leftRightEqualityPossible(array: [Int]) -> Bool {
+    class func leftRightEqualityPossible(_ array: [Int]) -> Bool {
         if array.count < 3 {
             return false
         }

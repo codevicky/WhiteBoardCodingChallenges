@@ -10,7 +10,7 @@ import Foundation
 
 class MaximumSubarray: NSObject {
 
-    class func maximumTotals(array: [Int]) -> (contiguousTotal: Int, nonContiguousTotal: Int) {
+    class func maximumTotals(_ array: [Int]) -> (contiguousTotal: Int, nonContiguousTotal: Int) {
     
         let contiguousTotal = MaximumSubarray.maximumContiguous(array)
         let nonContiguousTotal = MaximumSubarray.maximumNonContiguousTotal(array)
@@ -18,7 +18,7 @@ class MaximumSubarray: NSObject {
         return (contiguousTotal, nonContiguousTotal)
     }
     
-    class func maximumNonContiguousTotal(array: [Int]) -> Int {
+    class func maximumNonContiguousTotal(_ array: [Int]) -> Int {
         
         var nonContiguousTotal = array[0]
         
@@ -40,7 +40,7 @@ class MaximumSubarray: NSObject {
         return nonContiguousTotal
     }
     
-    class func maximumContiguous(array: [Int]) -> Int {
+    class func maximumContiguous(_ array: [Int]) -> Int {
         
         var contiguousTotal = array[0]
         

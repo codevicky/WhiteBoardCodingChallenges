@@ -11,7 +11,7 @@ import UIKit
 //https://www.hackerrank.com/challenges/chocolate-feast
 class ChocolateFeast: NSObject {
     
-    class func countOfEatenChocolates(dollarsInPocket: Int, chocolatePrice: Int, wrapperExchangeTheshold: Int) -> Int {
+    class func countOfEatenChocolates(_ dollarsInPocket: Int, chocolatePrice: Int, wrapperExchangeTheshold: Int) -> Int {
         
         let chocolatesBrought = dollarsInPocket/chocolatePrice
         let chocolatesExchanged = ChocolateFeast.exchangeWrappersForChocolate(chocolatesBrought, wrapperExchangeTheshold: wrapperExchangeTheshold)
@@ -19,7 +19,7 @@ class ChocolateFeast: NSObject {
         return chocolatesBrought + chocolatesExchanged
     }
     
-    class func exchangeWrappersForChocolate(wrappers: Int, wrapperExchangeTheshold: Int) -> Int {
+    class func exchangeWrappersForChocolate(_ wrappers: Int, wrapperExchangeTheshold: Int) -> Int {
         
         var chocolatesFromExchange = wrappers/wrapperExchangeTheshold
         

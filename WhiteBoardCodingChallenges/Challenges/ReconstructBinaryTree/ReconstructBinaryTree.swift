@@ -20,7 +20,7 @@ class ReconstructBinaryTree: NSObject {
     
     // MARK: Reconstruct
     
-    func reconstructTree(deconstructedTree: [[Int]]) -> ReconstructBinaryTreeNode {
+    func reconstructTree(_ deconstructedTree: [[Int]]) -> ReconstructBinaryTreeNode {
         
         for nodePair in deconstructedTree {
             
@@ -49,7 +49,7 @@ class ReconstructBinaryTree: NSObject {
         return rootNode()
     }
     
-    private func rootNode() -> ReconstructBinaryTreeNode {
+    fileprivate func rootNode() -> ReconstructBinaryTreeNode {
         
         var rootNode = nodes.values.first!
         
